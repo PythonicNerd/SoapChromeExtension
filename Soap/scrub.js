@@ -1,33 +1,28 @@
-var bad_words = ["crap"]; //leave this blank until later
-var insults = ["screw you"]; // leave blank until later
+var pLen = document.getElementsByTagName("p").length;
+var h1Len = document.getElementsByTagName("h1").length;
+var h2Len = document.getElementsByTagName("h2").length;
+var h3Len = document.getElementsByTagName("h3").length;
+var h4Len = document.getElementsByTagName("h4").length;
+var h5Len = document.getElementsByTagName("h5").length;
+var spanLen = document.getElementsByTagName("span").length;
+var curses = ["crap", "heck"]
 
-function scrub(doc_elem) {
+function search(type,len){
+for (var i = 0; i < len; i++) {
+  var curEle = document.getElementsByTagName(type)[i]
   
-  for (var i = 0; i < bad_words.length; i++) {
-    if (doc_elem.innerHTML.indexOf(bad_words[i]) !== -1) {
-	  console.log("bad word found");
-	  var string = Array(bad_words[i].length + 1).join('*');
-	  var re = new RegExp(bad_words[i], 'gi');
-      doc_elem = doc_elem.replace(re, string);
-    }
-  }
   
-  for (var i = 0; i < insults.length; i++) {
-    if (doc_elem.innerHTML.indexOf(insults[i]) !== -1) {
-	  console.log("insult found");
-	  var string = Array(insults[i].length + 1).join('*');
-	  var re = new RegExp(insults[i], 'gi');
-      doc_elem = doc_elem.replace(re, string);
-    }
+  if (curses.indexOf(curEle.innerHTML) > -1) {
+    console.log("Bad Word Found")
+    curEle.innerHTML = "****"
   }
 }
-
-function scrub_interact() {
-  scrub("document.title");
-  var elements = document.querySelectorAll("*");
-  for (var i = 0; i < elements.length; i++) {
-    scrub(elements[i]);
-  }
 }
 
-setTimeout(scrub_interact, 1);
+search("p",pLen);
+search("h1",h1Len);
+search("h2",h2Len);
+search("h3",h3Len);
+search("h4",h4Len);
+search("h5",h5Len);
+search("span",spanLen);
