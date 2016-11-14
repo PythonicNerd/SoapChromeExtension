@@ -1,4 +1,4 @@
-/*var pLen = document.getElementsByTagName("p").length;
+var pLen = document.getElementsByTagName("p").length;
 
 var h1Len = document.getElementsByTagName("h1").length;
 
@@ -67,5 +67,5 @@ search("span",spanLen);
 search("li",liLen);
 
 search("div",divLen);
-*/
+
 
