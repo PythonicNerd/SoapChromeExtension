@@ -25,11 +25,20 @@ for (var i = 0; i < len; i++) {
   
 var curEle = document.getElementsByTagName(type)[i];
 
-if (curses.indexOf(curEle.innerHTML) > -1) {
+if (curses.indexOf(curEle.innerHTML) > -1){
 
 console.log("Bad Word Found");
     
 curEle.innerHTML = "****";  
+}
+for(var z = 0; z > curses.length; z++){
+  var curCurse = curses[z];
+  else if(curEle.innerHTML.includes(curCurse)){
+    console.log("Bad Word Found");
+    curEle.innerHTML = "****";  
+  }
+  
+  
 }
 
 }
