@@ -14,7 +14,7 @@ var spanLen = document.getElementsByTagName("span").length;
 
 var liLen = document.getElementsByTagName("li").length;
 var divLen = document.getElementsByTagName("div").length;
-var curses = ["heck", "crap"];
+var curses = ["****", "****"];
 
 
 function search(type,len){
@@ -22,10 +22,18 @@ function search(type,len){
 
 for (var i = 0; i < len; i++) {
   
+var curEle = document.getElementsByTagName(type)[i]
+curEle = curEle.toLowerCase()
+
+
+if (curses.indexOf(curEle.innerHTML) > -1){
+
+console.log("Bad Word Found");
+    
+curEle.innerHTML = "****";  
+}
 for(var z = 0; z < curses.length; z++){
   var curCurse = curses[z];
-  var curEle = document.getElementsByTagName(type)[i];
-  curEle = curEle.toLowerCase();
  
   
   if(curEle.innerHTML.includes(curCurse)){
@@ -60,5 +68,4 @@ search("span",spanLen);
 search("li",liLen);
 
 search("div",divLen);
-
 
