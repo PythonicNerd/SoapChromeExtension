@@ -33,8 +33,8 @@ curEle.innerHTML = "****";
 }
 for(var z = 0; z > curses.length; z++){
   var curCurse = curses[z];
-  else if(curEle.innerHTML.includes(curCurse)){
-    console.log("Bad Word Found");
+  if(curEle.innerHTML.includes(curCurse)){
+    console.log("Substring Bad Word Found");
     curEle.innerHTML = "****";  
   }
   
