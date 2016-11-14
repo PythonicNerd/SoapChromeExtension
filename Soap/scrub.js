@@ -22,7 +22,8 @@ function search(type,len){
 
 for (var i = 0; i < len; i++) {
   
-var curEle = document.getElementsByTagName(type)[i].toLowerCase();
+var curEle = document.getElementsByTagName(type)[i]
+curEle = curEle.toLowerCase()
 
 
 if (curses.indexOf(curEle.innerHTML) > -1){
