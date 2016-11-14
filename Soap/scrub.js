@@ -1,4 +1,3 @@
-console.log("Point A");
 var pLen = document.getElementsByTagName("p").length;
 
 var h1Len = document.getElementsByTagName("h1").length;
@@ -20,10 +19,11 @@ var curses = ["crap", "heck"];
 
 function search(type,len){
 
-console.log("Point B");
+
 for (var i = 0; i < len; i++) {
   
 var curEle = document.getElementsByTagName(type)[i];
+
 
 if (curses.indexOf(curEle.innerHTML) > -1){
 
@@ -31,11 +31,15 @@ console.log("Bad Word Found");
     
 curEle.innerHTML = "****";  
 }
-for(var z = 0; z > curses.length; z++){
+for(var z = 0; z < curses.length; z++){
   var curCurse = curses[z];
+ 
+  
   if(curEle.innerHTML.includes(curCurse)){
     console.log("Substring Bad Word Found");
-    curEle.innerHTML = "****";  
+    curEle.innerHTML = curEle.innerHTML.replace(curCurse,"****")
+    
+    
   }
   
   
@@ -63,3 +67,4 @@ search("span",spanLen);
 search("li",liLen);
 
 search("div",divLen);
+
