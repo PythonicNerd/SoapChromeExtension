@@ -14,7 +14,7 @@ var spanLen = document.getElementsByTagName("span").length;
 
 var liLen = document.getElementsByTagName("li").length;
 var divLen = document.getElementsByTagName("div").length;
-var curses = ["crap", "heck"];
+var curses = ["****", "****"];
 
 
 function search(type,len){
@@ -22,7 +22,7 @@ function search(type,len){
 
 for (var i = 0; i < len; i++) {
   
-var curEle = document.getElementsByTagName(type)[i];
+var curEle = document.getElementsByTagName(type)[i].toLowerCase();
 
 
 if (curses.indexOf(curEle.innerHTML) > -1){
