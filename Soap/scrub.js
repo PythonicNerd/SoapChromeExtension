@@ -17,7 +17,12 @@ var h5Len = document.getElementsByTagName("h5").length;
 var spanLen = document.getElementsByTagName("span").length;
 
 var liLen = document.getElementsByTagName("li").length;
+
 var divLen = document.getElementsByTagName("div").length;
+
+var bLen = document.getElementsByTagName("b").length;
+
+var aLen = document.getElementsByTagName("a").length;
 var curses = ["crap ","heck","heck "];
 
 
@@ -25,9 +30,9 @@ function search(type,len){
 
 
 for (var i = 0; i < len; i++) {
-  
+ 
 var curEl = document.getElementsByTagName(type)[i].innerHTML;  //PLEASE WORK
-//if(curEl !== null){
+if(curEl.tagName !== "img"){
 var curEle = curEl.toLowerCase();
 var outCurEle = document.getElementsByTagName(type)[i]
 
@@ -35,6 +40,7 @@ var outCurEle = document.getElementsByTagName(type)[i]
 
 for(var z = 0; z < curses.length; z++){
   var curCurse = curses[z];
+  
  
   
   if(curEle.includes(curCurse)){ //.innerHTML
@@ -43,13 +49,13 @@ for(var z = 0; z < curses.length; z++){
     outCurEle.innerHTML = curEle.replace(curCurse,"****") //.innerHTML;
     
     
-  //}
+
   
  }
 }
 
 }
-
+}
 }
 
 
@@ -69,5 +75,8 @@ search("span",spanLen);
 
 search("li",liLen);
 
-search("div",divLen);
+//search("div",divLen);
+
+search("b",bLen);
+//search("a",aLen);
 
